@@ -5,20 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu_GM : MonoBehaviour
 {
-    // Start is called before the first frame update
+    AudioSource audio_Source;
+    public AudioClip button_Sound;
+
     void Start()
     {
-        
+        audio_Source = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void btn_Options_Click()
     {
+        audio_Source.PlayOneShot(button_Sound);
         SceneManager.LoadScene("OptionsMenu");
     }
 }
