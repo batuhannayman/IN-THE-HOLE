@@ -12,6 +12,15 @@ public class MainMenu_GM : MonoBehaviour
     {
         audio_Source = GetComponent<AudioSource>();
 
+        if (PlayerPrefs.HasKey("audioVolume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("audioVolume");
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("audioVolume", 0.5f);
+            AudioListener.volume = PlayerPrefs.GetFloat("audioVolume");
+        }
     }
 
 
@@ -19,5 +28,16 @@ public class MainMenu_GM : MonoBehaviour
     {
         audio_Source.PlayOneShot(button_Sound);
         SceneManager.LoadScene("OptionsMenu");
+    }
+
+    public void btn_Play_Click()
+    {
+        audio_Source.PlayOneShot(button_Sound);
+        SceneManager.LoadScene("Game");
+    }
+
+    public void btn_Exit_Click()
+    {
+        Application.Quit();
     }
 }

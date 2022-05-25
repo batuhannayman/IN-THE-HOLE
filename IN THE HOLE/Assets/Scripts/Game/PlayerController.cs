@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
     public float h;
     float maxSpeed = 9;
     float speed = 8;
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
+    public static AudioSource audio_Source_PLayer;
+    AudioClip eat_Sound;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audio_Source_PLayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

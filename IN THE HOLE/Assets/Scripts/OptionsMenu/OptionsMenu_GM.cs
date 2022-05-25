@@ -47,4 +47,9 @@ public class OptionsMenu_GM : MonoBehaviour
         audio_Source.PlayOneShot(button_Sound);
         SceneManager.LoadScene("MainMenu");
     }
+
+    public static void asd()
+    {
+        
+    }
 }
